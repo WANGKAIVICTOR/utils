@@ -62,10 +62,3 @@ def copyAllFilesToNewDir(current_path, dest_path, suffix='.pdf'):
         if file.endswith(suffix):
             shutil.copy(file, dest_path+'\\'+file.split('\\')[-1])
             print(file)
-
-
-path = r"D:\Study\MSc\COMP7630 Web Intelligence and Its Applications\Lecture"
-bulkImportFilesToLogseq(path)
-# current_path = r"C:\Users\12482\Desktop\Kant"
-# dest_path = r"C:\Users\12482\Desktop\a"
-# copyAllFilesToNewDir(current_path, dest_path)
