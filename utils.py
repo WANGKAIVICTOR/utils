@@ -13,6 +13,7 @@ def getAllfielsPathInDir(path):
         list contains all files' paths. 
     """
 
+    # METHOD 1
     if not os.path.exists(path):
         print("Cannot find the file/directory.")
         sys.exit()
@@ -29,6 +30,14 @@ def getAllfielsPathInDir(path):
         else:
             files.append(path + '\\' + current_path)
     return files
+
+    # METHOD 2
+    paths = []
+    for curDir, dirs, files in os.walk(path):
+        for file in files:
+            paths.append(os.path.join(curDir, file))
+    return paths
+
 
 
 def bulkImportFilesToLogseq(path):
@@ -62,3 +71,6 @@ def copyAllFilesToNewDir(current_path, dest_path, suffix='.pdf'):
         if file.endswith(suffix):
             shutil.copy(file, dest_path+'\\'+file.split('\\')[-1])
             print(file)
+
+# print(getAllfielsPathInDir(r"D:\Study\Kant-20230127T144901Z-001"))
+print(len(getAllfielsPathInDir(r"D:\Study\Kant-20230127T144901Z-001")))
