@@ -71,6 +71,3 @@ def copyAllFilesToNewDir(current_path, dest_path, suffix='.pdf'):
         if file.endswith(suffix):
             shutil.copy(file, dest_path+'\\'+file.split('\\')[-1])
             print(file)
-
-# print(getAllfielsPathInDir(r"D:\Study\Kant-20230127T144901Z-001"))
-print(len(getAllfielsPathInDir(r"D:\Study\Kant-20230127T144901Z-001")))
